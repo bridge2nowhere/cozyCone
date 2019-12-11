@@ -10,11 +10,6 @@ void handleSentVar() {
   if (server.hasArg("awakeTime")) { // this is the variable sent from the client
     int readingInt = server.arg("awakeTime").toInt();
     Serial.println(readingInt);
-    //char readingToPrint[5];
-    //itoa(readingInt, readingToPrint, 10); //integer to string conversion for OLED library
-    //u8g2.firstPage();
-    //u8g2.drawUTF8(0, 64, readingToPrint);
-    //u8g2.nextPage();
     server.send(200, "text/html", "Data received");
   }
 }
